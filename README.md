@@ -5,7 +5,7 @@ Inspired on jQuery.
 
 Example :
 ```javascript
-// as3 vanila
+// as3 vanilla
 myButton.addEventListener(MouseEvent.CLICK, myClickReaction);
 
 function myClickReaction (e:MouseEvent):void{
