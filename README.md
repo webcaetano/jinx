@@ -24,7 +24,6 @@ myButton.$click(function(){
 - [x] Create test environment in GulpJS
 - [ ] Add to NPM
 - [ ] Create Documentation
-- [ ] Make 
 - [ ] Make Examples
 - [ ] Finish to prototype functions
 
