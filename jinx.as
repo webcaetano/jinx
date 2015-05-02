@@ -1,3 +1,7 @@
+/**
+Author : Andre Caetano 2015
+**/
+
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.external.ExternalInterface;
