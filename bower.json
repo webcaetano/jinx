@@ -1,0 +1,10 @@
+{
+  "name": "jinx",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "swf-jquery": "~1.2.0"
+  },
+  "devDependencies": {
+  }
+}
