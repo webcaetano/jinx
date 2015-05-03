@@ -9,13 +9,36 @@ Example :
 myButton.addEventListener(MouseEvent.CLICK, myClickReaction);
 
 function myClickReaction (e:MouseEvent):void{
-	trace("I was clicked!");
+	trace("Clicked!");
 }
 
 // jinx
 myButton.$click(function(){
-	trace("I was clicked!");
+	trace("Clicked!");
 });
+```
+
+Chaning Functions Example:
+```javascript
+// as3 vanilla
+myMc.addEventListener(Event.ENTER_FRAME, function(e:Event){
+	e.target.x += 0.5;
+});
+
+myMc.addEventListener(MouseEvent.MOUSE_OVER, function(e:Event){
+	trace("Hover!");
+});
+
+myMc.gotoAndStop(3);
+myMc.visible = true;
+
+// jinx
+myMc.$enterFrame(function(){
+	this.x += 0.5;
+}).$hover(function(){
+	trace("Hover!");
+}).$gotoAndStop(3).$show();
+
 ```
 
 ### Project Road : 
