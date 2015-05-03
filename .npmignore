@@ -9,3 +9,4 @@ gulp/
 gulpfile.js
 .bowerrc
 bower.json
+npm-debug.log

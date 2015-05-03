@@ -26,8 +26,24 @@
 17 verbose afterAdd C:\Users\Andre\AppData\Roaming\npm-cache\jinx\0.1.1\package\package.json written
 18 silly publish { name: 'jinx',
 18 silly publish   version: '0.1.1',
+18 silly publish   description: 'Jinx is an AS3 API, that make AS3 simpler and easy-to-use. Inspired on jQuery.',
+18 silly publish   license: 'MIT',
+18 silly publish   repository: { type: 'git', url: 'https://github.com/webcaetano/jinx' },
+18 silly publish   author:
+18 silly publish    { name: 'Andre Caetano',
+18 silly publish      email: 'dezaodoido@gmail.com',
+18 silly publish      url: 'https://github.com/webcaetano' },
+18 silly publish   keywords:
+18 silly publish    [ 'framework',
+18 silly publish      'jinx',
+18 silly publish      'api',
+18 silly publish      'swf',
+18 silly publish      'swc',
+18 silly publish      'flash',
+18 silly publish      'actionscript',
+18 silly publish      'as3' ],
 18 silly publish   dependencies: {},
-18 silly publish   main: 'jinx.as',
+18 silly publish   main: './jinx.as',
 18 silly publish   scripts: { test: 'gulp test' },
 18 silly publish   devDependencies:
 18 silly publish    { 'babel-loader': '~4.0.0',
@@ -69,10 +85,11 @@
 18 silly publish   engines: { node: '>=0.10.0' },
 18 silly publish   readme: '# ![Imgur](http://i.imgur.com/FHjshUv.png)\n\nJinx is an AS3 API, that make AS3 simpler and easy-to-use. \nInspired on jQuery.\n\nExample :\n```javascript\n// as3 vanilla\nmyButton.addEventListener(MouseEvent.CLICK, myClickReaction);\n\nfunction myClickReaction (e:MouseEvent):void{\n\ttrace("Clicked!");\n}\n\n// jinx\nmyButton.$click(function(){\n\ttrace("Clicked!");\n});\n```\n\nChaning Functions Example:\n```javascript\n// as3 vanilla\nmyMc.addEventListener(Event.ENTER_FRAME, function(e:Event){\n\te.target.x += 0.5;\n});\n\nmyMc.addEventListener(MouseEvent.MOUSE_OVER, function(e:Event){\n\ttrace("Hover!");\n});\n\nmyMc.gotoAndStop(3);\nmyMc.visible = true;\n\n// jinx\nmyMc.$enterFrame(function(){\n\tthis.x += 0.5;\n}).$hover(function(){\n\ttrace("Hover!");\n}).$gotoAndStop(3).$show();\n\n```\n\n### Project Road : \n\n- [x] Create Repo\n- [x] Create test environment in GulpJS using [gulp-flash](https://github.com/webcaetano/gulp-flash)\n- [ ] Add to [NPM](https://www.npmjs.com)\n- [ ] Create Documentation\n- [ ] Make Examples\n- [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)\n\nAny ideias? Issues? Have some improvment? Please help us, and make part of this API. :+1:\n\n\n---------------------------------\n\nThe MIT [License](https://raw.githubusercontent.com/webcaetano/jinx/master/LICENSE.md)\n',
 18 silly publish   readmeFilename: 'README.md',
-18 silly publish   gitHead: '761b67839ea5372a4b35e6fc87d651ea7c6f6b40',
-18 silly publish   description: 'Jinx is an AS3 API, that make AS3 simpler and easy-to-use.  Inspired on jQuery.',
+18 silly publish   gitHead: '904c150d0d45774f15c3335e1fd032da20cef33c',
+18 silly publish   bugs: { url: 'https://github.com/webcaetano/jinx/issues' },
+18 silly publish   homepage: 'https://github.com/webcaetano/jinx',
 18 silly publish   _id: 'jinx@0.1.1',
-18 silly publish   _shasum: '1362a2a2457d9bd303d113c190977af2c8aaabd5',
+18 silly publish   _shasum: '39a86fde32db012b91886767e8196bc979fa9bf7',
 18 silly publish   _from: '.' }
 19 silly mapToRegistry name jinx
 20 silly mapToRegistry using default registry
@@ -82,22 +99,22 @@
 24 silly publish uploading C:\Users\Andre\AppData\Roaming\npm-cache\jinx\0.1.1\package.tgz
 25 verbose request uri https://registry.npmjs.org/jinx
 26 verbose request sending authorization for write operation
-27 info attempt registry request try #1 at 12:44:14 AM
+27 info attempt registry request try #1 at 12:49:42 AM
 28 verbose request using bearer token for auth
-29 verbose request id 96bde790b315073b
+29 verbose request id bbde8e904e7d5cbe
 30 http request PUT https://registry.npmjs.org/jinx
 31 http 404 https://registry.npmjs.org/jinx
 32 verbose headers { 'content-type': 'application/json',
 32 verbose headers   'cache-control': 'max-age=0',
 32 verbose headers   'content-length': '21',
 32 verbose headers   'accept-ranges': 'bytes',
-32 verbose headers   date: 'Sun, 03 May 2015 03:44:15 GMT',
+32 verbose headers   date: 'Sun, 03 May 2015 03:49:42 GMT',
 32 verbose headers   via: '1.1 varnish',
 32 verbose headers   connection: 'keep-alive',
-32 verbose headers   'x-served-by': 'cache-atl6226-ATL',
+32 verbose headers   'x-served-by': 'cache-jfk1031-JFK',
 32 verbose headers   'x-cache': 'MISS',
 32 verbose headers   'x-cache-hits': '0',
-32 verbose headers   'x-timer': 'S1430624654.599657,VS0,VE915' }
+32 verbose headers   'x-timer': 'S1430624982.092984,VS0,VE706' }
 33 verbose request invalidating C:\Users\Andre\AppData\Roaming\npm-cache\registry.npmjs.org\jinx on PUT
 34 error publish Failed PUT 404
 35 verbose stack Error: Not found : jinx
