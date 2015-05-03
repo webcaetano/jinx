@@ -48,7 +48,7 @@ myMc.$enterFrame(function(){
 - [x] Add to [NPM](https://www.npmjs.com)
 - [x] Make one Jinx Package ([jinx-mempanel](https://github.com/webcaetano/jinx-mempanel))
 - [x] Load one Jinx Package via [NPM](https://www.npmjs.com)
-- [ ] Create a [GulpJS](http://gulpjs.com) plugin for autoload Jinx Packages
+- [ ] Create a [jinx-loader](https://github.com/webcaetano/jinx-loader) packages and a [GulpJS](http://gulpjs.com) Injector
 - [ ] Create Documentation
 - [ ] Make a gh-page with Examples
 - [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)
