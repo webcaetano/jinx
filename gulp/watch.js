@@ -47,21 +47,6 @@ module.exports = function(options) {
 		});
 	});
 
-
-	// function build(done,end){
-	// 	return gulp.src(options.src + '/app/flash/main.as')
-	// 	.pipe(flash(options.src + '/app/flash/dist',{
-	// 		'debug':true, // enable this for detailed errors
-	// 		'library-path': [
-	// 			options.src + '/app/flash/libs'
-	// 		]
-	// 	}))
-	// 	.pipe(through.obj(function(file, enc, callback){
-	// 		if(done) done();
-	// 		if(end) process.exit();
-	// 	}));
-	// }
-
 	var pathToSrcFile = function(src,dest){
 		var p = path.relative(path.dirname(src),path.dirname(dest)).split('\\').join('/');
 		return (p && p.length ? p+'/'+path.basename(dest) : dest);
@@ -105,7 +90,7 @@ module.exports = function(options) {
 		return arr;
 	}
 
-	var getJinxPkgs = function(options){
+	var getJinxPkgsNames = function(options){
 		options = options || {};
 
 		var pattern = arrayify(options.pattern || ['jinx-*']);
@@ -131,36 +116,43 @@ module.exports = function(options) {
 		return files;
 	}
 
-
-	gulp.task('t',function(){
-		var files = [];
-		var pkgs = ['../'].concat(getJinxPkgs());
+	var getJinxPkgs = function(relativeTo){
+		var allFiles = [];
+		var pkgs = ['../'].concat(getJinxPkgsNames());
 		var root = path.resolve('node_modules');
+		var i;
+		var files = {as:[],swc:[]};
 
-
-		for(var i in pkgs){
+		for(i in pkgs){
 			var pkgFile = JSON.parse(fs.readFileSync(path.join(root, pkgs[i], 'package.json')));
 			var jinxPkgFiles = getJinxPkgFiles(pkgFile);
-			if(jinxPkgFiles.length) files = files.concat(addPkgPath(jinxPkgFiles,path.join(root, pkgs[i])));
+			if(jinxPkgFiles.length) allFiles = allFiles.concat(addPkgPath(jinxPkgFiles,path.join(root, pkgs[i])));
+		}
+		for(i in allFiles){
+			if(path.extname(allFiles[i])=='.as'){
+				files['as'].push(pathToSrcFile(relativeTo,allFiles[i]));
+			} else {
+				files['swc'].push(pathToSrcFile('./',path.dirname(allFiles[i])));
+			}
 		}
 
-		// console.log(files);
-		console.log(pathToSrcFile(options.tmp+'/as/app/flash/main.as',files[2]));
-		process.exit();
-	});
+		return files;
+	}
 
 	function build(done,end){
-		runSequence('clean','copy_as', function(){
-			var mainFile = options.tmp+'/as/app/flash/main.as'
+		var mainFile = options.tmp+'/as/app/flash/main.as'
+		var pkgs = getJinxPkgs(mainFile);
 
+		var libs = [
+			options.src + '/app/flash/libs'
+		].concat(pkgs.swc);
+
+		runSequence('clean','copy_as', function(){
 			gulp.src(mainFile)
 			.pipe(through.obj(function(file, enc, callback){
 				var fileContent = String(file.contents);
-				if(fileContent.indexOf('// [[inject:jinx]]')!=-1){
-					fileContent = fileContent.replace('// [[inject:jinx]]',[
-						"include './../../../../jinx.as';"
-						// "include 'partials/foo.as';"
-					].join("\n"));
+				if(fileContent.indexOf('// [[inject:jinx]]')!=-1 && pkgs.as.length){
+					fileContent = fileContent.replace('// [[inject:jinx]]',"include '"+pkgs.as.join("';\n include '")+"';\n");
 				}
 
 				file.contents = new Buffer(fileContent);
@@ -169,9 +161,7 @@ module.exports = function(options) {
 			.pipe(gulp.dest(path.dirname(mainFile)))
 			.pipe(flash(options.src + '/app/flash/dist',{
 				'debug':true, // enable this for detailed errors
-				'library-path': [
-					options.src + '/app/flash/libs'
-				]
+				'library-path': libs
 			}))
 			.pipe(through.obj(function(file, enc, callback){
 				if(done) done();
