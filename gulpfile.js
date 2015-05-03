@@ -6,7 +6,7 @@ var _ = require('lodash');
 var wrench = require('wrench');
 
 var options = {
-	src: 'src',
+	src: 'test',
 	dist: 'dist',
 	tmp: '.tmp',
 	errorHandler: function(title) {
