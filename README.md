@@ -50,7 +50,7 @@ myMc.$enterFrame(function(){
 - [ ] Make a gh-page with Examples
 - [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)
 
-Any ideias? Issues? Have some improvment? Please help us, and make part of this API. :+1:
+Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
 
 ---------------------------------
