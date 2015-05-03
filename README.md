@@ -1,4 +1,4 @@
-# Jinx
+# ![Imgur](http://i.imgur.com/FHjshUv.png)
 
 Jinx is an AS3 API, that make AS3 simpler and easy-to-use. 
 Inspired on jQuery.
