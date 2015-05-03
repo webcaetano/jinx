@@ -45,9 +45,9 @@ myMc.$enterFrame(function(){
 
 - [x] Create Repo
 - [x] Create test environment in GulpJS using [gulp-flash](https://github.com/webcaetano/gulp-flash)
-- [ ] Add to [NPM](https://www.npmjs.com)
+- [x] Add to [NPM](https://www.npmjs.com)
 - [ ] Create Documentation
-- [ ] Make Examples
+- [ ] Make a gh-page with Examples
 - [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)
 
 Any ideias? Issues? Have some improvment? Please help us, and make part of this API. :+1:
