@@ -1,11 +1,12 @@
 {
-	"name": "jinx",
-	"version": "0.1.1",
+	"name": "jinx.as",
+	"version": "0.1.1-1",
 	"description": "Jinx is an AS3 API, that make AS3 simpler and easy-to-use. Inspired on jQuery.",
 	"license": "MIT",
 	"repository": {
-		"type": "git",
-		"url": "git@github.com:webcaetano/swf-build.git"
+		"name": "",
+		"email": "webandrecaetano@gmail.com",
+		"url": "https://github.com/webcaetano"
 	},
 	"author": "Andre Caetano",
 	"keywords": [
