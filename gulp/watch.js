@@ -37,9 +37,10 @@ module.exports = function(options) {
 		});
 	});
 
-	gulp.watch([options.src + '/app/flash/**/*.as','jinx.as'], function(event) {
+	gulp.watch([options.src + '/app/flash/**/*.{as,swc}','jinx.as'], function(event) {
 		gulp.src(options.src + '/app/flash/main.as')
 		.pipe(flash(options.src + '/app/flash/dist',{
+			'debug':true, // enable this for detailed errors
 			'library-path': [
 				options.src + '/app/flash/libs'
 			]

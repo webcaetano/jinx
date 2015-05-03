@@ -1,4 +1,11 @@
-test/
 node_modules/
 .travis.yml
 .editorconfig
+bower_components/
+.sass-cache/
+src/
+.tmp/
+gulp/
+gulpfile.js
+.bowerrc
+bower.json

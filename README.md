@@ -27,6 +27,8 @@ myButton.$click(function(){
 - [ ] Make Examples
 - [ ] Finish to prototype functions
 
+Any ideias? Issues? Please help us. And make part of this API. :+1:
+
 ---------------------------------
 
 The MIT [License](https://raw.githubusercontent.com/webcaetano/jinx/master/LICENSE.md)
