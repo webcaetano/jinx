@@ -37,8 +37,9 @@ module.exports = function(options) {
 		});
 	});
 
-	gulp.watch([options.src + '/app/flash/**/*.{as,swc}','jinx.as'], function(event) {
-		gulp.src(options.src + '/app/flash/main.as')
+
+	function build(done,end){
+		return gulp.src(options.src + '/app/flash/main.as')
 		.pipe(flash(options.src + '/app/flash/dist',{
 			'debug':true, // enable this for detailed errors
 			'library-path': [
@@ -46,7 +47,18 @@ module.exports = function(options) {
 			]
 		}))
 		.pipe(through.obj(function(file, enc, callback){
-			browserSync.reload(event.path);
+			if(done) done();
+			if(end) process.exit();
 		}));
+	}
+
+	gulp.task('build', function (done) {
+		build(done,true);
+	});
+
+	gulp.watch([options.src + '/app/flash/**/*.{as,swc}','jinx.as'], function(event) {
+		build(function(){
+			browserSync.reload(event.path);
+		});
 	});
 };
