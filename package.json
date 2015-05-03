@@ -1,8 +1,26 @@
 {
 	"name": "jinx",
 	"version": "0.1.1",
+	"description": "Jinx is an AS3 API, that make AS3 simpler and easy-to-use. Inspired on jQuery.",
+	"license": "MIT",
+	"repository": "webcaetano/jinx",
+	"author": {
+		"name": "Andre Caetano",
+		"email": "webandrecaetano@gmail.com",
+		"url": "https://github.com/webcaetano"
+	},
+	"keywords": [
+	"framework",
+	"jinx",
+	"api",
+	"swf",
+	"swc",
+	"flash",
+	"actionscript",
+	"as3"
+	],
 	"dependencies": {},
-	"main": "./jinx.as",
+	"main": "jinx.as",
 	"scripts": {
 		"test": "gulp test"
 	},
