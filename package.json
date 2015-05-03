@@ -1,6 +1,6 @@
 {
 	"name": "jinx.as",
-	"version": "0.1.1-1",
+	"version": "0.1.1-2",
 	"description": "Jinx is an AS3 API, that make AS3 simpler and easy-to-use. Inspired on jQuery.",
 	"license": "MIT",
 	"repository": {

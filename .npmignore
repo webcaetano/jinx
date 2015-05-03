@@ -3,7 +3,7 @@ node_modules/
 .editorconfig
 bower_components/
 .sass-cache/
-src/
+test/
 .tmp/
 gulp/
 gulpfile.js
