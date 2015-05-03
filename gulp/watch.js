@@ -55,7 +55,7 @@ module.exports = function(options) {
 
 		runSequence('clean','copy_as', function(){
 			gulp.src(mainFile)
-			.pipe(through.obj(function(file, enc, callback){
+			.pipe(through.obj(function(file, enc, callback){ // .AS Injection
 				var fileContent = String(file.contents);
 				if(fileContent.indexOf('// [[inject:jinx]]')!=-1 && pkgs.as.length){
 					fileContent = fileContent.replace('// [[inject:jinx]]',"include '"+pkgs.as.join("';\n include '")+"';\n");
