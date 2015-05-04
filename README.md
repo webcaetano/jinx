@@ -129,7 +129,7 @@ myMc.$enterFrame(function(){
 - [x] Make one Jinx Package ([jinx-mempanel](https://github.com/webcaetano/jinx-mempanel))
 - [x] Load one Jinx Package via [NPM](https://www.npmjs.com)
 - [x] Create a [jinx packages loader](https://github.com/webcaetano/jinx-loader) 
-- [x] Create a [glup-jinx-inject](https://github.com/webcaetano/gulp-jinx-inject)
+- [x] Create a [gulp-jinx-inject](https://github.com/webcaetano/gulp-jinx-inject)
 - [ ] Create Documentation [-         ] 5%
 - [ ] Merge all non-prototype functions in one Object ($ and jinx)
 - [ ] Make a gh-page with Examples
