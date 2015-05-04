@@ -79,7 +79,7 @@ gulp build
 
 ### console.log
 Works like trace but output in the browser console. See [Print](http://i.imgur.com/bE0TzzL.png).
-Debug everything in a browser.
+Debug everything in a browser. Alias for $trace()
 ```javascript
 console.log('Hello World'); // output Hello World
 ```
