@@ -81,7 +81,7 @@ gulp build
 Works like trace but output in the browser console. See [Print](http://i.imgur.com/bE0TzzL.png).
 Debug everything in a browser.
 ```javascript
-console.log('Hello World'); // output Hello Wolrd
+console.log('Hello World'); // output Hello World
 ```
 
 ### $click
