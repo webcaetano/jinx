@@ -52,6 +52,7 @@ myMc.$enterFrame(function(){
 - [x] Create a [jinx packages loader](https://github.com/webcaetano/jinx-loader) 
 - [ ] Create Documentation
 - [ ] Make a gh-page with Examples
+- [ ] Dependencies of Dependencies
 - [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)
 
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
