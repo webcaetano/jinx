@@ -48,6 +48,16 @@ module.exports = function(options) {
 		});
 	});
 
+
+
+	gulp.task('c',function(){
+		gulp.src(path.join(options.src,'app/flash/init.jinx'))
+		.pipe(through.obj(function (file, enc, callback) {
+			//file.contents = new Buffer(require('../jinx-compiler')(file));
+			require('../jinx-compiler')(file);
+		}))
+	})
+
 	gulp.task('copy',function(){
 		return gulp.src([
 			options.src +'/**/*.as',

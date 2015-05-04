@@ -1,0 +1,6 @@
+require('jinx-mempanel');
+require("jinx-mempanel");
+include 'partials/bar.as';
+
+console.log('Hello World');
+$memPanel();
