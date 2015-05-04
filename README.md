@@ -46,12 +46,10 @@ myMc.$enterFrame(function(){
 
 The best way is cloning this repo and use the test folder as workspace. We don't have any boilerplate yet.
 ```
-git clone git@github.com:webcaetano/jinx.git
+git clone https://github.com/webcaetano/jinx.git
 cd jinx
 npm install
 ```
-
-### Commands
 
 Start the develpment mode.
 ```
@@ -70,7 +68,7 @@ gulp build
 
 ## Documentation
 
-- [console.log](#console.log)
+- [console.log](#consolelog)
 
 - Events
   - [$click](#click)
