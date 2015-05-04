@@ -51,7 +51,7 @@ cd jinx
 npm install
 ```
 
-Start the develpment mode.
+Start the development mode.
 ```
 gulp serve
 ```
