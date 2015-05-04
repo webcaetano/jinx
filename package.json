@@ -55,7 +55,7 @@
     "gulp-webpack": "~1.2.0",
     "http-proxy": "~1.8.0",
     "install": "^0.1.8",
-    "jinx-loader": "^1.0.1",
+    "jinx-loader": "^1.0.3",
     "jinx-mempanel": "^1.0.2",
     "lodash": "~3.2.0",
     "main-bower-files": "~2.5.0",

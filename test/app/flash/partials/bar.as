@@ -18,6 +18,7 @@ myMc.$hover(function(){
 myMc.$enterFrame(function(){
 	this.rotation += 2;
 });
-// .$scale(50);
-// .$followMouse();
+var require = function(){
 
+}
+console.log(require);

@@ -9,6 +9,7 @@ var fs = require('fs');
 var jinxLoader = require('jinx-loader');
 var jinxInject = require('gulp-jinx-inject');
 
+
 var $ = require('gulp-load-plugins')({
 	pattern: ['del']
 });
@@ -18,6 +19,8 @@ function isOnlyChange(event) {
 }
 
 module.exports = function(options) {
+	var tmpFolder = path.join(options.tmp,'jinx');
+
 	gulp.task('watch', ['scripts:watch'], function () {
 
 		gulp.watch([options.src + '/*.html', 'bower.json'],function(){
@@ -49,11 +52,11 @@ module.exports = function(options) {
 		return gulp.src([
 			options.src +'/**/*.as',
 		])
-		.pipe(gulp.dest(options.tmp+'/as'));
+		.pipe(gulp.dest(tmpFolder));
 	});
 
 	gulp.task('build', ['copy'], function () {
-		var mainFile = options.tmp+'/as/app/flash/main.as'
+		var mainFile = tmpFolder+'/app/flash/main.as'
 		var pkgs = jinxLoader(mainFile);
 
 		return gulp.src(mainFile)
