@@ -332,15 +332,11 @@ MovieClip.prototype.$enterFrame = function(callback){
 
 /* END EVENTS TRIGGERS */
 
-var $noMenu = function(){
-	//stage.addEventListener(MouseEvent.RIGHT_CLICK, function(){});
-}
-
 var $new = function(objName=null){
 	if(!objName){
 		return new MovieClip();
 	} else {
-		return new (getDefinitionByName(objName) as Class)();
+		return new (getDefinitionByName(objName) as Class)(); // <-- still not working on flex.
 	}
 }
 

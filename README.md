@@ -1,8 +1,8 @@
 # ![Imgur](http://i.imgur.com/FHjshUv.png)
 
-Jinx is an AS3 API, that make AS3 simpler and easy-to-use. 
-Inspired on jQuery. 
-Jinx is [NPM](https://www.npmjs.com) Friendly , for publish and load Jinx packages
+Jinx is an AS3 API, that make AS3 simpler and easy-to-use. Inspired on jQuery. 
+
+Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packages (.as and .swc)
 
 Example :
 ```javascript
@@ -42,7 +42,86 @@ myMc.$enterFrame(function(){
 
 ```
 
-### Project Road : 
+## Getting Started
+
+The best way is cloning this repo and use the test folder as workspace. We don't have any boilerplate yet.
+```
+git clone git@github.com:webcaetano/jinx.git
+cd jinx
+npm install
+```
+
+### Commands
+
+Start the develpment mode.
+```
+gulp serve
+```
+
+Create the .swf 
+```
+gulp
+
+# or 
+
+gulp build
+```
+
+
+## Documentation
+
+- [console.log](#console.log)
+
+- Events
+  - [$click](#click)
+  - [$hover](#console.log)
+  - [$enterFrame](#enterFrame)
+
+
+
+### console.log
+Works like trace but output in the browser console. See ![Print](http://i.imgur.com/bE0TzzL.png).
+Debug everything in a browser.
+```javascript
+console.log('Hello World'); // output Hello Wolrd
+```
+
+### $click
+Click Event, alias for mc.$bind('click',[Function]).
+```javascript
+myMc.name = 'Lulu';
+
+myMc.$click(function(){
+	console.log(this.name); // lulu;
+}); // click event
+```
+
+### $hover
+Mouse hover event, alias for mc.$bind('hover',[Function]).
+```javascript
+myMc.$hover(function(){
+	console.log('mouse hover');
+});
+
+// or
+
+myMc.$hover(function(){
+	console.log('mouse hover');
+},function(){
+	console.log('mouse out');
+});
+```
+
+### $enterFrame
+EnterFrame Event, alias for mc.$bind('enterFrame',[Function]).
+```javascript
+myMc.$enterFrame(function(){
+	this.rotation += 0.5; // it will spin;
+});
+```
+
+
+## Project Road : 
 
 - [x] Create Repo
 - [x] Create test environment in GulpJS using [gulp-flash](https://github.com/webcaetano/gulp-flash)
@@ -50,7 +129,9 @@ myMc.$enterFrame(function(){
 - [x] Make one Jinx Package ([jinx-mempanel](https://github.com/webcaetano/jinx-mempanel))
 - [x] Load one Jinx Package via [NPM](https://www.npmjs.com)
 - [x] Create a [jinx packages loader](https://github.com/webcaetano/jinx-loader) 
-- [ ] Create Documentation
+- [x] Create a [glup-jinx-inject](https://github.com/webcaetano/gulp-jinx-inject)
+- [ ] Create Documentation [-         ] 5%
+- [ ] Merge all non-prototype functions in one Object ($ and jinx)
 - [ ] Make a gh-page with Examples
 - [ ] Dependencies of Dependencies
 - [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)

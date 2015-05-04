@@ -1,20 +1,23 @@
-var tmpObj = new foo();
-addChild(tmpObj);
+var myMc = new foo();
+addChild(myMc);
 
-tmpObj.x=250;
-tmpObj.y=200;
+myMc.x=250;
+myMc.y=200;
 
-// tmpObj.$click(function(){
+// myMc.$click(function(){
 // 	this.$hide();
 // })
 
-tmpObj.$hover(function(){
+myMc.$hover(function(){
 	this.$tint($randomIndex(['FF00FF','00FFFF','00FF00','FFFF00','0000FF','FF0000']),100,10);
 },function(){
 	this.$tint('FFFFFF');
 });
 
-console.log('lal')
+
+myMc.$enterFrame(function(){
+	this.rotation += 2;
+});
 // .$scale(50);
 // .$followMouse();
 

@@ -10,6 +10,6 @@ public function main() {
 
 	include 'partials/bar.as';
 
+	console.log('Hello World');
 	$memPanel();
-	console.log('lol')
 }}}
