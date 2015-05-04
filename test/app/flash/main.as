@@ -11,4 +11,5 @@ public function main() {
 	include 'partials/bar.as';
 
 	$memPanel();
+	console.log('lol')
 }}}

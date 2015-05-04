@@ -14,7 +14,7 @@ tmpObj.$hover(function(){
 	this.$tint('FFFFFF');
 });
 
-
+console.log('lal')
 // .$scale(50);
 // .$followMouse();
 
