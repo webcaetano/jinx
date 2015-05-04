@@ -74,13 +74,13 @@ gulp build
 
 - Events
   - [$click](#click)
-  - [$hover](#console.log)
-  - [$enterFrame](#enterFrame)
+  - [$hover](#hover)
+  - [$enterFrame](#enterframe)
 
 
 
 ### console.log
-Works like trace but output in the browser console. See ![Print](http://i.imgur.com/bE0TzzL.png).
+Works like trace but output in the browser console. See [Print](http://i.imgur.com/bE0TzzL.png).
 Debug everything in a browser.
 ```javascript
 console.log('Hello World'); // output Hello Wolrd
