@@ -19,13 +19,12 @@ Example :
 //as3 vanilla
 package {
 	import flash.display.Sprite;
-		public class Main extends Sprite {
-			public function Main() {
-				trace('hello world');
-			}
+	public class Main extends Sprite {
+		public function Main() {
+			trace('hello world');
 		}
 	}
-} // 9 lines
+} // 8 lines
 
 //jinx
 trace('hello world'); // one line 
