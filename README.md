@@ -1,50 +1,53 @@
 # ![Imgur](http://i.imgur.com/FHjshUv.png)
 
-Jinx is an AS3 API, that make AS3 simpler and easy-to-use. Inspired on jQuery. 
+Jinx is an AS3 API, that make AS3 simpler and easy-to-use, but more powerfull with some new features.
 
-Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packages (.as and .swc)
+Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packages (.as and .swc). 
+Compiled currently on GulpJS it making easily to create news plugins and features.
+
+### Features 
+- :heavy_check_mark: function require() for load modules from NPM like in nodejs, browserify, webpack.
+- :heavy_check_mark: browser development, with livercompiler and liverload. 
+- :heavy_check_mark: Ready to Code. No need to start with [package -> public class -> public funciton].
+- :heavy_check_mark: load or export swc. 
+- :heavy_check_mark: All of as3 but with more.
+- :heavy_check_mark: Open source.
 
 Example :
+
 ```javascript
-// as3 vanilla
-myButton.addEventListener(MouseEvent.CLICK, myClickReaction);
+//as3 vanilla
+package {
+	import flash.display.Sprite;
+		public class Main extends Sprite {
+			public function Main() {
+				trace('hello world');
+			}
+		}
+	}
+} // 9 lines
 
-function myClickReaction (e:MouseEvent):void{
-	trace("Clicked!");
-}
-
-// jinx
-myButton.$click(function(){
-	trace("Clicked!");
-});
+//jinx
+trace('hello world'); // one line 
 ```
 
-Chaning Functions Example:
+### Require()
+Load jinx-packages from npm
+
 ```javascript
-// as3 vanilla
-myMc.addEventListener(Event.ENTER_FRAME, function(e:Event){
-	e.target.x += 0.5;
-});
-
-myMc.addEventListener(MouseEvent.MOUSE_OVER, function(e:Event){
-	trace("Hover!");
-});
-
-myMc.gotoAndStop(3);
-myMc.visible = true;
-
 // jinx
-myMc.$enterFrame(function(){
-	this.x += 0.5;
-}).$hover(function(){
-	trace("Hover!");
-}).$gotoAndStop(3).$show();
+// npm install jinx-mempanel
 
+var memPanel  = require("jinx-mempanel");
+memPanel(); // create a panel that show FPS, Memory usage e Number of particles
+
+or just 
+require("jinx-mempanel")();
 ```
 
 ## Getting Started
 
-The best way is cloning this repo and use the test folder as workspace. We don't have any boilerplate yet.
+Cloning this repo.
 ```
 git clone https://github.com/webcaetano/jinx.git
 cd jinx
@@ -65,70 +68,15 @@ gulp
 gulp build
 ```
 
-
-## Documentation
-
-- [console.log](#consolelog)
-
-- Events
-  - [$click](#click)
-  - [$hover](#hover)
-  - [$enterFrame](#enterframe)
-
-
-
-### console.log
-Works like trace but output in the browser console. See [Print](http://i.imgur.com/bE0TzzL.png).
-Debug everything in a browser. Alias for $trace()
-```javascript
-console.log('Hello World'); // output Hello World
-```
-
-### $click
-Click Event, alias for mc.$bind('click',[Function]).
-```javascript
-myMc.name = 'Lulu';
-
-myMc.$click(function(){
-	console.log(this.name); // lulu;
-}); // click event
-```
-
-### $hover
-Mouse hover event, alias for mc.$bind('hover',[Function]).
-```javascript
-myMc.$hover(function(){
-	console.log('mouse hover');
-});
-
-// or
-
-myMc.$hover(function(){
-	console.log('mouse hover');
-},function(){
-	console.log('mouse out');
-});
-```
-
-### $enterFrame
-EnterFrame Event, alias for mc.$bind('enterFrame',[Function]).
-```javascript
-myMc.$enterFrame(function(){
-	this.rotation += 0.5; // it will spin;
-});
-```
-
-
 ## Project Road : 
 
 - [x] Create Repo
 - [x] Create test environment in GulpJS using [gulp-flash](https://github.com/webcaetano/gulp-flash)
-- [x] Add to [NPM](https://www.npmjs.com)
-- [x] Make one Jinx Package ([jinx-mempanel](https://github.com/webcaetano/jinx-mempanel))
+- [x] Make one Jinx Package for test ([jinx-mempanel](https://github.com/webcaetano/jinx-mempanel))
 - [x] Load one Jinx Package via [NPM](https://www.npmjs.com)
 - [x] Create a [jinx packages loader](https://github.com/webcaetano/jinx-loader) 
-- [x] Create a [gulp-jinx-inject](https://github.com/webcaetano/gulp-jinx-inject)
-- [x] Create .jinx Compiler with require and headless features
+- [x] Create [jinx-compiler](https://github.com/webcaetano/jinx-compiler) with require and headless features
+- [ ] Create some jinx packages (events, utils, errorhandle)
 - [ ] Create Documentation [-         ] 5%
 - [ ] Merge all non-prototype functions in one Object ($ and jinx)
 - [ ] Make a gh-page with Examples
