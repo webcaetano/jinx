@@ -36,11 +36,10 @@ Load jinx-packages from npm
 ```javascript
 // jinx
 // npm install jinx-mempanel
-
 var memPanel  = require("jinx-mempanel");
 memPanel(); // create a panel that show FPS, Memory usage e Number of particles
 
-or just 
+//or just 
 require("jinx-mempanel")();
 ```
 
