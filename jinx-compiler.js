@@ -103,18 +103,31 @@ var loadModules = function(modules,file){
 	}
 	for(i in allFiles){
 		if(path.extname(allFiles[i])=='.as'){
-			filesContent.push(fs.readFileSync(allFiles[i]));
+			filesContent.push(warpModule(String(fs.readFileSync(allFiles[i]))));
 		}
 	}
 
-	var resp = [];
-	for(i in filesContent){
-		resp.push(['function(module, exports, __jinx_require__) {',
-		filesContent[i],
-		'}'].join('\n'));
-	}
+	return filesContent;
+	// var resp = [];
+	// for(i in filesContent){
+	// 	resp.push(['function(module, exports, __jinx_require__) {',
+	// 	filesContent[i],
+	// 	'}'].join('\n'));
+	// }
 
-	return resp.join(",\n");
+	// return resp.join(",\n");
+}
+
+var warp = function(pre,content,suf,separator){
+	return [pre,content,suf || pre].join((separator ? separator : ','));
+}
+
+var warpModule = function(content){
+	return warp('function(module, exports, __jinx_require__) {',content,'}','\n');
+}
+
+var replaceModules = function(str,modules){
+	// __jinx_require__
 }
 
 module.exports = function(file){
@@ -125,53 +138,34 @@ module.exports = function(file){
 	var fileName = getFileName(file.path);
 	var i;
 
-	var asHeader = 'package {\n'+
-	'import flash.display.Sprite;\n'+
-	'public class '+fileName+' extends Sprite {\n'+
-	'public function '+fileName+'() {\n';
+	var asHeader = _.template(String(fs.readFileSync('template/_asHeader.js')))({fileName:fileName});
 
-	// console.log(fileContent)
 	var search = [
-		/require\('[a-zA-Z_\-\.]+'\)/g,
-		/require\("[a-zA-Z_\-\.]+"\)/g
-	] ;
+		/require\s*\(\s*'[a-zA-Z_\-\.]+'\s*\)/g,
+		/require\s*\(\s*"[a-zA-Z_\-\.]+"\s*\)/g
+	];
+
+	console.log(search[0])
 
 	var modules = [];
 
-	for(i in search){
-		modules = modules.concat(fileContent.match(search[i]));
-	}
-	// fileContent.match();
+	for(i in search) modules = modules.concat(fileContent.match(search[i]));
+
 	for(i in modules){
 		modules[i] = modules[i].match(/['"][a-zA-Z_\-\.]+['"]/g)[0];
 		modules[i] = modules[i].substr(1,modules[i].length-2);
 	}
-
 	modules = _.uniq(modules);
 
-	modulesContents = loadModules(modules,file.path);
+	fileContent = replaceModules(fileContent,modules);
 
-	var jinxHeader = '(function(modules) {\n'+
-		'var installedModules = {};\n'+
-		'function __jinx_require__(moduleId) {\n'+
-			'if(installedModules[moduleId]) return installedModules[moduleId].exports;\n'+
-			'var module = installedModules[moduleId] = {\n'+
-				'exports: {},\n'+
-				'id: moduleId,\n'+
-				'loaded: false\n'+
-			'};\n'+
-			'modules[moduleId].call(module.exports, module, module.exports, __jinx_require__);\n'+
-			'module.loaded = true;\n'+
-			'return module.exports;\n'+
-		'}\n'+
-		'return __jinx_require__(0);\n'+
-	'})\n';
+	var compilerHeader = String(fs.readFileSync('template/_compilerHeader.js'));
+	var modulesContents = loadModules(modules,file.path);
+	modulesContents.unshift(warpModule(fileContent));
 
+	var resp = [asHeader,compilerHeader,'(['+modulesContents.join(',\n')+']);','}}}'].join('\n');
 
-	fileContent = asHeader+jinxHeader+'(['+modulesContents+'])'+fileContent+'\n'+
-	'}}}\n';
-
-	return fileContent;
+	// console.log(resp);
 }
 
 // ([])
