@@ -1,10 +1,10 @@
 require('jinx-mempanel'	);
+require('jinx-events');
 var memPanel  = require(	"jinx-mempanel");
 
 memPanel();
 
-include 'partials/jinx.as';
+// include 'partials/jinx.as';
 include 'partials/bar.as';
 
-console.log('hello world');
-
+// console.log('hello worldz');

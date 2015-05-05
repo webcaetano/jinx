@@ -6,8 +6,6 @@ var browserSync = require('browser-sync');
 var through = require('through2');
 var path = require('path');
 var fs = require('fs');
-var jinxLoader = require('jinx-loader');
-var jinxInject = require('gulp-jinx-inject');
 var ext_replace = require('gulp-ext-replace');
 var jinxCompiler = require('jinx-compiler')
 
@@ -59,11 +57,12 @@ module.exports = function(options) {
 
 	gulp.task('build', ['copy'], function () {
 		var mainFile = path.join(tmpFolder,'/app/flash/init.jinx');
-		var pkgs = jinxLoader(mainFile);
 
 		return gulp.src(path.join(options.src,'app/flash/init.jinx'))
 		.pipe(through.obj(function (file, enc, callback) {
-			file.contents = new Buffer(jinxCompiler(file));
+			var resp = jinxCompiler(file);
+			file.contents = resp.contents;
+			file.swc = resp.swc;
 			callback(null,file);
 		}))
 		.pipe(ext_replace('.as'))
@@ -72,7 +71,7 @@ module.exports = function(options) {
 			'debug':true, // enable this for detailed errors
 			'library-path': [
 				options.src + '/app/flash/libs'
-			].concat(pkgs.swc)
+			]
 		}));
 	});
 
