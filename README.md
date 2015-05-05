@@ -80,6 +80,8 @@ gulp build
 
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
+:gun: "Whatever, let's just start shooting!" :stuck_out_tongue_winking_eye:
+
 ---------------------------------
 
 The MIT [License](https://raw.githubusercontent.com/webcaetano/jinx/master/LICENSE.md)
