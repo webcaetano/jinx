@@ -75,14 +75,10 @@ gulp build
 - [x] Create a [jinx packages loader](https://github.com/webcaetano/jinx-loader) 
 - [x] Create [jinx-compiler](https://github.com/webcaetano/jinx-compiler) with require and headless features
 - [ ] Create some jinx packages (events, utils, errorhandle)
-- [ ] Create Documentation [-         ] 5%
-- [ ] Merge all non-prototype functions in one Object ($ and jinx)
 - [ ] Make a gh-page with Examples
 - [ ] Dependencies of Dependencies
-- [ ] Create API for load AS Plugins and SWC from [NPM](https://www.npmjs.com)
 
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
-
 
 ---------------------------------
 
