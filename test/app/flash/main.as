@@ -1,6 +1,6 @@
 package {
 
-import flash.display.*;
+import flash.display.Sprite;
 
 public class main extends Sprite {
 public function main() {
@@ -11,4 +11,6 @@ public function main() {
 
 	console.log('Hello World');
 	$memPanel();
+
+
 }}}

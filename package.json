@@ -20,7 +20,6 @@
     "as3"
   ],
   "dependencies": {},
-  "main": "./jinx.as",
   "scripts": {
     "test": "gulp test"
   },
@@ -34,6 +33,7 @@
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "~2.1.0",
     "gulp-csso": "~1.0.0",
+    "gulp-ext-replace": "^0.2.0",
     "gulp-filter": "~2.0.2",
     "gulp-flash": "^1.0.4-1",
     "gulp-flatten": "~0.0.4",
@@ -55,8 +55,9 @@
     "gulp-webpack": "~1.2.0",
     "http-proxy": "~1.8.0",
     "install": "^0.1.8",
-    "jinx-loader": "^1.0.3",
-    "jinx-mempanel": "^1.0.2",
+    "jinx-compiler": "^1.0.4",
+    "jinx-loader": "^1.0.6",
+    "jinx-mempanel": "^1.0.3",
     "lodash": "~3.2.0",
     "main-bower-files": "~2.5.0",
     "merge-stream": "~0.1.7",

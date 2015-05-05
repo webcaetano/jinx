@@ -1,0 +1,7 @@
+include 'partials/jinx.as';
+require('jinx-mempanel'	);
+var memPanel  = require(	"jinx-mempanel");
+include 'partials/bar.as';
+
+console.log('bola');
+memPanel();
