@@ -126,8 +126,21 @@ var warpModule = function(content){
 	return warp('function(module, exports, __jinx_require__) {',content,'}','\n');
 }
 
+
+var escapeRegExp = function(str) { // credits CoolAJ86
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 var replaceModules = function(str,modules){
-	// __jinx_require__
+	for(var i in modules){
+		str = str.replace(getCard(escapeRegExp(modules[i])),'__jinx_require__('+(1+modules.indexOf(modules[i]))+')');
+	}
+
+	return str;
+}
+
+
+var getCard = function(mid){
+	return new RegExp('require\\s*\\(\\s*\'['+mid+']+\'\\s*\\)|require\\s*\\(\\s*"['+mid+']+"\\s*\\)','g')
 }
 
 module.exports = function(file){
@@ -140,16 +153,9 @@ module.exports = function(file){
 
 	var asHeader = _.template(String(fs.readFileSync('template/_asHeader.js')))({fileName:fileName});
 
-	var search = [
-		/require\s*\(\s*'[a-zA-Z_\-\.]+'\s*\)/g,
-		/require\s*\(\s*"[a-zA-Z_\-\.]+"\s*\)/g
-	];
-
-	console.log(search[0])
-
 	var modules = [];
 
-	for(i in search) modules = modules.concat(fileContent.match(search[i]));
+	modules = modules.concat(fileContent.match(getCard('a-zA-Z_\\-\\.')));
 
 	for(i in modules){
 		modules[i] = modules[i].match(/['"][a-zA-Z_\-\.]+['"]/g)[0];
@@ -166,6 +172,7 @@ module.exports = function(file){
 	var resp = [asHeader,compilerHeader,'(['+modulesContents.join(',\n')+']);','}}}'].join('\n');
 
 	// console.log(resp);
+	return resp;
 }
 
 // ([])
