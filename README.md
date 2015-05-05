@@ -2,7 +2,7 @@
 
 Jinx is an AS3 API, that make AS3 simpler and easy-to-use, but more powerfull with some new features.
 
-Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packages (.as and .swc). 
+Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packages (.jinx, .as and .swc). 
 Compiled currently on GulpJS it making easily to create news plugins and features.
 
 ### Features 
