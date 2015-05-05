@@ -6,7 +6,7 @@ Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packa
 Compiled currently on GulpJS it making easily to create news plugins and features.
 
 ### Features 
-- :heavy_check_mark: function require() for load modules from NPM like in nodejs, browserify, webpack.
+- :heavy_check_mark: require() & modules.exports for load modules from NPM like in nodejs, browserify, webpack.
 - :heavy_check_mark: browser development, with livercompiler and liverload. 
 - :heavy_check_mark: Ready to Code. No need to start with [package -> public class -> public funciton].
 - :heavy_check_mark: load or export swc. 
