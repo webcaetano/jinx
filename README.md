@@ -11,7 +11,7 @@ Compiled currently on GulpJS it making easily to create news plugins and feature
 - :heavy_check_mark: browser development, with livercompiler and liverload. 
 - :heavy_check_mark: Ready to Code. No need to start with [package -> public class -> public funciton].
 - :heavy_check_mark: load or export swc. 
-- :heavy_check_mark: All of as3 but with more.
+- :heavy_check_mark: All of as3 but simpler with more.
 - :heavy_check_mark: Open source.
 
 Example :
