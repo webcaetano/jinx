@@ -85,6 +85,8 @@ gulp build
 
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
+Jinx is not AS3. Is [ADC](http://tinyurl.com/o3llg4l) ![Kappa](http://static-cdn.jtvnw.net/emoticons/v1/25/1.0)
+
 ---------------------------------
 
 The MIT [License](https://raw.githubusercontent.com/webcaetano/jinx/master/LICENSE.md)
