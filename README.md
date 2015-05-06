@@ -66,9 +66,8 @@ gulp
 gulp build
 ```
 
-## Project Road : 
+### Project Road : 
 
-- [x] Create Repo
 - [x] Create test environment in GulpJS using [gulp-flash](https://github.com/webcaetano/gulp-flash)
 - [x] Make one Jinx Package for test ([jinx-mempanel](https://github.com/webcaetano/jinx-mempanel))
 - [x] Load one Jinx Package via [NPM](https://www.npmjs.com)
@@ -77,6 +76,11 @@ gulp build
 - [ ] Create some jinx packages ([events](https://github.com/webcaetano/jinx-events), utils, errorhandle)
 - [ ] Make a gh-page with Examples
 - [ ] Dependencies of Dependencies
+
+### First Jinx Modules 
+
+- [jinx-mempanel](https://github.com/webcaetano/jinx-mempanel) Panel of Performance (Memory, FPS, Particles counter) [@webcaetano](https://github.com/webcaetano)
+- [jinx-events](https://github.com/webcaetano/jinx-events) MovieClipe Events by Protoype & chaining  [@webcaetano](https://github.com/webcaetano)
 
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
