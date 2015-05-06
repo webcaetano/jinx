@@ -1,5 +1,8 @@
+import flash.utils.*;
+
 require('jinx-mempanel'	);
 require('jinx-events');
+require('jinx-error-catcher')();
 var memPanel  = require(	"jinx-mempanel");
 
 memPanel();
@@ -7,4 +10,6 @@ memPanel();
 // include 'partials/jinx.as';
 include 'partials/bar.as';
 
-// console.log('hello worldz');
+// setTimeout(function(){
+// 	root['xxx'].x = 3; // simulating error
+// },2000)
