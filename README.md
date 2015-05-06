@@ -73,6 +73,7 @@ gulp build
 - [x] Load one Jinx Package via [NPM](https://www.npmjs.com)
 - [x] Create a [jinx packages loader](https://github.com/webcaetano/jinx-loader) 
 - [x] Create [jinx-compiler](https://github.com/webcaetano/jinx-compiler) with require and headless features
+- [x] Create [gulp-jinx-compiler](https://github.com/webcaetano/gulp-jinx-compiler) to compile .jinx into .swf
 - [ ] Create some jinx packages ([events](https://github.com/webcaetano/jinx-events), utils, [errorhandle](https://github.com/webcaetano/jinx-error-catcher))
 - [ ] Make a gh-page with Examples
 - [ ] Dependencies of Dependencies
