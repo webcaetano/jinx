@@ -1,13 +1,11 @@
 'use strict';
 
 var gulp = require('gulp');
-var flash = require('gulp-flash');
+var jinxCompiler = require('gulp-jinx-compiler');
 var browserSync = require('browser-sync');
 var through = require('through2');
 var path = require('path');
 var fs = require('fs');
-var ext_replace = require('gulp-ext-replace');
-var jinxCompiler = require('jinx-compiler')
 
 var $ = require('gulp-load-plugins')({
 	pattern: ['del']
@@ -47,32 +45,15 @@ module.exports = function(options) {
 		});
 	});
 
-	gulp.task('copy',function(){
-		return gulp.src([
-			options.src +'/**/*.as',
-		])
-		.pipe(gulp.dest(tmpFolder));
-	});
+	gulp.task('build', function () {
+		var mainFile = 'app/flash/init.jinx';
 
-
-	gulp.task('build', ['copy'], function () {
-		var mainFile = path.join(tmpFolder,'/app/flash/init.jinx');
-
-		return gulp.src(path.join(options.src,'app/flash/init.jinx'))
-		.pipe(through.obj(function (file, enc, callback) {
-			var resp = jinxCompiler(file);
-			file.contents = resp.contents;
-			file.swc = resp.swc;
-			callback(null,file);
-		}))
-		.pipe(ext_replace('.as'))
-		.pipe(gulp.dest(path.dirname(mainFile)))
-		.pipe(flash(options.src + '/app/flash/dist',{
-			'debug':true, // enable this for detailed errors
+		return gulp.src(path.join(options.src,mainFile))
+		.pipe(jinxCompiler(options.src+'/app/flash/dist',{
 			'library-path': [
 				options.src + '/app/flash/libs'
 			]
-		}));
+		}))
 	});
 
 	gulp.watch([options.src + '/app/flash/**/*.{as,jinx,swc}'], function(event) {

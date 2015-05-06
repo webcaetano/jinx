@@ -8,7 +8,3 @@ var memPanel  = require(	"jinx-mempanel");
 memPanel();
 
 include 'partials/bar.as';
-
-// setTimeout(function(){
-// 	root['xxx'].x = 3; // simulating error
-// },2000)
