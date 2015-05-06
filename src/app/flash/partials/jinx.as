@@ -587,38 +587,6 @@ MovieClip.prototype.$addImg = function(url,arg1='img',arg2='img'){
 	return this;
 }
 
-/* ERROR HANDLE */
-if(loaderInfo.hasOwnProperty("uncaughtErrorEvents")) loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, function uncaughtErrorHandler( event:UncaughtErrorEvent ):void {
-	var deepDir = 2;
-	var maxStack = 3; // 0 for infinite;
-	var errorText:String;
-	var errorObj:Object = {};
-	var stack:String;
-	if( event.error is Error ) {
-		errorText = (event.error as Error).message;
-		errorObj.msg = errorText;
-		stack = (event.error as Error).getStackTrace();
-		errorObj.stack = stack;
-		if(stack != null){ errorText += stack; }
-	} else if( event.error is ErrorEvent ) {
-		errorText = (event.error as ErrorEvent).text;
-	} else {
-		errorText = event.text;
-	}
-	event.preventDefault();
-
-	var resp = [];
-	var asSplit = errorText.split(".as:");
-	for(var i=1;i<asSplit.length;i++){
-		var dir = [];
-		for(var k=deepDir;k>0;--k) dir.push(asSplit[i-1].split('\\').slice(k*-1)[0]);
-		resp.push(dir.join("/")+".as:"+asSplit[i].split("]")[0]);
-		if(maxStack && i>=maxStack) break;
-	}
-
-	console.log(errorObj.msg+"\n\n"+resp.join('\n'));
-});
-
 /* EXTERNAL FUNCS */
 var $js = function(js){
 	ExternalInterface.call(js);
