@@ -53,12 +53,12 @@ npm install
 ```
 
 Start the development mode.
-```
+```Batchfile
 gulp serve
 ```
 
 Create the .swf 
-```
+```Batchfile
 gulp
 
 # or 
