@@ -46,7 +46,7 @@ require("jinx-mempanel")();
 ## Getting Started
 
 Cloning this repo.
-```
+```Batchfile
 git clone https://github.com/webcaetano/jinx.git
 cd jinx
 npm install
