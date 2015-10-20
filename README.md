@@ -78,6 +78,11 @@ gulp build
 - [jinx-error-catcher](https://github.com/webcaetano/jinx-error-catcher) handle error and submit to browser console [@webcaetano](https://github.com/webcaetano)
 - [jinx-console](https://github.com/webcaetano/jinx-console) enable console browser object on AS3  [@webcaetano](https://github.com/webcaetano)
 
+### ScreenShots
+
+![jinx-console](http://i.imgur.com/DdARTRu.jpg)
+
+
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
 *"Jinx is not AS3. Is [ADC](http://tinyurl.com/o3llg4l)"* ![Kappa](http://static-cdn.jtvnw.net/emoticons/v1/25/1.0)
