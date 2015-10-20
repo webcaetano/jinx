@@ -7,10 +7,6 @@ var through = require('through2');
 var path = require('path');
 var fs = require('fs');
 
-var $ = require('gulp-load-plugins')({
-	pattern: ['del']
-});
-
 function isOnlyChange(event) {
 	return event.type === 'changed';
 }
