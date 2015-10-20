@@ -1,10 +1,10 @@
 import flash.utils.*;
 
-require('jinx-mempanel'	);
 require('jinx-events');
 require('jinx-error-catcher')();
-var memPanel  = require(	"jinx-mempanel");
-
-memPanel();
+require("jinx-mempanel")();
 
 include 'partials/bar.as';
+
+var console = require('jinx-console');
+console.log('bola');

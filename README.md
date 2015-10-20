@@ -75,7 +75,8 @@ gulp build
 
 - [jinx-mempanel](https://github.com/webcaetano/jinx-mempanel) Panel of Performance (Memory, FPS, Particles counter) [@webcaetano](https://github.com/webcaetano)
 - [jinx-events](https://github.com/webcaetano/jinx-events) MovieClipe Events by Protoype & chaining  [@webcaetano](https://github.com/webcaetano)
-- [jinx-error-catcher](https://github.com/webcaetano/jinx-error-catcher) handle error and submit to browser console  [@webcaetano](https://github.com/webcaetano)
+- [jinx-error-catcher](https://github.com/webcaetano/jinx-error-catcher) handle error and submit to browser console [@webcaetano](https://github.com/webcaetano)
+- [jinx-console](https://github.com/webcaetano/jinx-console) enable console browser object on AS3  [@webcaetano](https://github.com/webcaetano)
 
 Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
