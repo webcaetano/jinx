@@ -6,13 +6,14 @@ Jinx is [NPM](https://www.npmjs.com) friendly , for publish and load Jinxs packa
 Compiled currently on GulpJS it making easily to create news plugins and features.
 
 ### Features 
-- :heavy_check_mark: `CommonJS-style` require() & modules.exports for load modules from NPM like in nodejs, browserify, webpack.
-- :heavy_check_mark: IDE Free. Work on your favorite text editor.
-- :heavy_check_mark: browser development, with livercompiler and liverload. 
-- :heavy_check_mark: Ready to Code. No need to start with [package -> public class -> public funciton].
-- :heavy_check_mark: load or export swc. 
-- :heavy_check_mark: All of as3 but simpler with more.
-- :heavy_check_mark: Open source.
+- ✔ `CommonJS-style` require() & modules.exports for load modules from NPM like in nodejs, browserify, webpack.
+- ✔ Open AS3 to NPM.
+- ✔ IDE Free. Work on your favorite text editor.
+- ✔ browser development, with livercompiler and liverload. 
+- ✔ Ready to Code. No need to start with [package -> public class -> public funciton].
+- ✔ load or export swc from NPM.  
+- ✔ All of as3 but simpler with more.
+- ✔ Open source.
 
 Example :
 
@@ -38,7 +39,7 @@ Load jinx-packages from npm
 // jinx
 // npm install jinx-mempanel
 var memPanel  = require("jinx-mempanel");
-memPanel(); // create a panel that show FPS, Memory usage and Number of particles
+memPanel(); // load a jinx module + swc that show FPS, Memory usage and Number of particles in a panel.
 
 //or just 
 require("jinx-mempanel")();
@@ -46,11 +47,13 @@ require("jinx-mempanel")();
 
 ## Getting Started
 
-Cloning this repo.
+Cloning this repo. 
+This repo is just a jinx boilerplate.
+
 ```Batchfile
 git clone https://github.com/webcaetano/jinx.git
 cd jinx
-npm install
+npm install && bower install
 ```
 
 Start the development mode.
