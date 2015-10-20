@@ -26,20 +26,6 @@ module.exports = function(options) {
 			});
 		});
 
-		gulp.watch([
-			options.src + '/{app,components,less}/**/*.css',
-			options.src + '/{app,components,less}/**/*.scss'
-		], function(event) {
-			if(isOnlyChange(event)) {
-				gulp.start('styles',function(){
-					browserSync.reload();
-				});
-			} else {
-				gulp.start('inject');
-			}
-		});
-
-
 		gulp.watch(options.src + '/{app,components}/**/*.html', function(event) {
 			browserSync.reload(event.path);
 		});

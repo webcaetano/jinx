@@ -65,6 +65,7 @@
     "npm": "^2.9.0",
     "protractor": "~1.7.0",
     "require-dir": "~0.1.0",
+    "run-sequence": "^1.1.4",
     "through2": "^0.6.5",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.0",
