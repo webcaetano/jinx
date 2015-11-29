@@ -19,15 +19,13 @@ module.exports = function(options) {
 	// 		host: 'localhost',
 	// 		user: 'root',
 	// 		password: '',
-	// 		database: '',
+	// 		database: 'test',
 	// 		data:false,
 	// 		autoIncrement:false,
 	// 		ifNotExist:true, // Create table if not exist
 	// 		dest:'./mysql/schema.sql' // destination file
 	// 	},function(){
-	// 		git.exec({args: "add . -A"},function(){
-	// 			done();
-	// 		})
+	// 		done();
 	// 	});
 	// });
 
@@ -54,7 +52,7 @@ module.exports = function(options) {
 	})
 
 	// gulp.task('git:add',['mysql-backup'], function () { //hook mysql scheme to trigger at git add
-	gulp.task('git:add', function () { //hook mysql scheme to trigger at git add
+	gulp.task('git:add', function () {
 		return gulp.src(packageSrc)
 			.pipe(git.add({args: " -A"}));
 	});

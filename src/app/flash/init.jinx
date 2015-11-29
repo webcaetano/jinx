@@ -7,4 +7,3 @@ require("jinx-mempanel")();
 include 'partials/bar.as';
 
 var console = require('jinx-console');
-console.log('bola');
