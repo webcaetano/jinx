@@ -83,11 +83,7 @@ gulp build
 ![jinx-console](http://i.imgur.com/DdARTRu.jpg)
 
 
-Any ideias? Issues? Have some improvement? Please help us, and make part of this API. :+1:
 
 ---------------------------------
 
-The MIT [License](https://raw.githubusercontent.com/webcaetano/jinx/master/LICENSE.md)
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/webcaetano/jinx/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[The MIT License](https://raw.githubusercontent.com/webcaetano/jinx/master/LICENSE.md)
